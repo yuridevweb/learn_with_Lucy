@@ -78,31 +78,16 @@ img {
 /* ======================Intro================== */
 
 .intro .grid {
-  grid-template-columns: 2fr 3fr;
-  grid-template-rows: 1fr 8fr;
-  grid-template-areas:
-    "speech-bubble intro-text"
-    "intro-img intro-text";
+  grid-template-columns: 4fr 6fr;
+  grid-template-rows: 1fr 2fr;
 }
-
-.intro-img {
-  max-width: 250px;
-  grid-area: intro-img;
-}
-
-.intro-text {
-  grid-area: intro-text;
-}
-
+/* =================Speech-bubble================= */
 .speech-bubble {
   position: relative;
-  background: var(--primary-color);
+  background: #ff9e9e;
   border-radius: 0.4em;
 }
 
-.speech-bubble h4 {
-  color: var(--light-color);
-}
 .speech-bubble:after {
   content: "";
   position: absolute;
@@ -110,22 +95,12 @@ img {
   left: 50%;
   width: 0;
   height: 0;
-  border: 19px solid transparent;
-  border-top-color: var(--primary-color);
+  border: 45px solid transparent;
+  border-top-color: #ff9e9e;
   border-bottom: 0;
   border-left: 0;
-  margin-left: -9.5px;
-  margin-bottom: -19px;
-}
-
-/* ===============Stats===================== */
-.stats .flex {
-  flex-direction: column;
-  padding-top: 50px;
-}
-
-.stats-img {
-  max-width: 600px;
+  margin-left: -22.5px;
+  margin-bottom: -45px;
 }
 
 /* =================Utilities================= */
@@ -161,15 +136,6 @@ img {
 
 .btn:hover {
   transform: scale(0.98);
-}
-
-.card {
-  background-color: var(--light-color);
-  color: black;
-  border-radius: 10px;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
-  padding: 20px;
-  margin: 10px;
 }
 /* ==================Tablets and under=============== */
 @media (max-width: 768px) {

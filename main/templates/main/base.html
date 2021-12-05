@@ -12,17 +12,51 @@
   <title>Learn With Lucy</title>
 </head>
 <body>
-  <div class="navbar">
-    <div class="container flex">
-      <h1 class="logo">Learn With Lucy</h1>
-      <nav>
-        <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">Features</a></li>
-          <li><a href="#">Docs</a></li>
+
+  <!-- Navbar -->
+  <div class="navbar" id="navbar">
+    <nav class="container flex">
+      <a class="logo" href="#">Learn With Lucy</a>
+        <button class="hamburger" id="hamburger">
+          <i class="fa fa-bars"></i>
+        </button>
+        <ul class="nav-ul" id="nav-ul">
+          <li><a class="navbar-links" href="#">Home</a></li>
+          <li><a class="navbar-links" href="#">Features</a></li>
+          <li><a class="navbar-links" href="#">Docs</a></li>
         </ul>
-      </nav>
-    </div>
+    </nav>
   </div>
+
+  <!-- Intro -->
+  <section class="intro">
+    <div class="container grid">
+      <div class="speech-bubble">
+        <h4>Hi, my name is Lucy!</h4>
+      </div>
+      <div class="intro-img">
+        <img src="{% static 'main/goat.svg' %}" alt="goat">
+      </div>
+      <div class="intro-text card">
+        <h1>Skills to practise to meet your learning objectives!</h1>
+        <p>Learning at home is different to learning in school.
+          So "Learn with Goat" is designed around home use, to make it effective, fun
+          and rewarding for children and parents alike.</p>
+        <a href="#" class="btn">Join now!</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats -->
+  <section class="stats">
+    <div class="container flex">
+      <h1 class="stats-heading">Educational games and activities</h3>
+      <div class="stats-img">
+        <img src="{% static 'main/children.svg' %}" alt="t">
+      </div>
+    </div>
+  </section>
+  <script src="{% static 'main/scripts.js' %}"></script>
 </body>
 </html>
+<!-- Burger Menu -->
