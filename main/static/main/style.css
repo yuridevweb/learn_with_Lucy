@@ -3,6 +3,7 @@
 :root {
   --primary-color: #990099;
   --light-color: #fff;
+  --dark-color: rgb(15, 15, 15);
 }
 
 * {
@@ -13,8 +14,14 @@
 
 body {
   font-family: "Roboto Mono", monospace;
-  color: #333;
+  color: var(--dark-color);
   line-height: 1.6;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
 }
 
 ul {
@@ -23,7 +30,7 @@ ul {
 
 a {
   text-decoration: none;
-  color: #333;
+  color: var(--dark-color);
 }
 
 p {
@@ -50,14 +57,14 @@ img {
 }
 
 .navbar a {
-  color: #fff;
+  color: var(--light-color);
   padding: 5px;
   margin: 0 5px;
   display: block;
 }
 
 .navbar-links:hover {
-  border-bottom: 2px #fff solid;
+  border-bottom: 2px var(--light-color) solid;
   max-width: 100px;
 }
 
@@ -77,6 +84,9 @@ img {
 }
 /* ======================Intro================== */
 
+.intro {
+  background-color: var(--primary-color);
+}
 .intro .grid {
   grid-template-columns: 2fr 3fr;
   grid-template-rows: 1fr 8fr;
@@ -86,7 +96,7 @@ img {
 }
 
 .intro-img {
-  max-width: 250px;
+  max-width: 300px;
   grid-area: intro-img;
 }
 
@@ -96,12 +106,13 @@ img {
 
 .speech-bubble {
   position: relative;
-  background: var(--primary-color);
-  border-radius: 0.4em;
+  background: var(--light-color);
+  border-radius: 5px;
 }
 
 .speech-bubble h4 {
-  color: var(--light-color);
+  color: var(--dark-color);
+  text-align: center;
 }
 .speech-bubble:after {
   content: "";
@@ -111,7 +122,7 @@ img {
   width: 0;
   height: 0;
   border: 19px solid transparent;
-  border-top-color: var(--primary-color);
+  border-top-color: var(--light-color);
   border-bottom: 0;
   border-left: 0;
   margin-left: -9.5px;
@@ -119,13 +130,72 @@ img {
 }
 
 /* ===============Stats===================== */
+
 .stats .flex {
   flex-direction: column;
   padding-top: 50px;
 }
 
 .stats-img {
-  max-width: 600px;
+  max-width: 500px;
+  padding-top: 50px;
+}
+
+.stats .grid {
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr 2fr;
+  row-gap: 0px;
+  column-gap: 30px;
+  padding-top: 50px;
+}
+
+.icon-1 {
+  align-items: center;
+  justify-self: center;
+}
+.icon-2 {
+  align-items: center;
+  justify-self: center;
+}
+.icon-3 {
+  align-items: center;
+  justify-self: center;
+}
+
+.icon-text-1,
+.icon-text-2,
+.icon-text-3 {
+  font-size: 16px;
+  align-self: start;
+}
+
+.icons {
+  color: var(--primary-color);
+}
+
+/* ===========Showcase========== */
+.showcase {
+  background-color: var(--primary-color);
+}
+.showcase .grid {
+  grid-template-columns: 2fr 3fr;
+}
+.showcase-img {
+  max-width: 250px;
+}
+
+/* ===============Showcase-benefits============ */
+.showcase-benefits .grid {
+  grid-template-columns: 1fr 7fr;
+}
+
+/* ===============Footer============ */
+.footer {
+  background-color: var(--primary-color);
+  color: var(--light-color);
+}
+.footer .flex {
+  justify-content: space-around;
 }
 
 /* =================Utilities================= */
@@ -165,14 +235,16 @@ img {
 
 .card {
   background-color: var(--light-color);
-  color: black;
+  color: var(--dark-color);
   border-radius: 10px;
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
   padding: 20px;
   margin: 10px;
 }
+
 /* ==================Tablets and under=============== */
 @media (max-width: 768px) {
+  /* Navbar */
   .nav-ul {
     display: none;
     flex-direction: column;
@@ -191,11 +263,54 @@ img {
   .logo {
     font-size: 20px;
   }
+  /* Intro */
+  .intro .grid {
+    grid-template-columns: 5fr 4fr;
+    grid-template-rows: 1fr 9fr;
+    grid-template-areas:
+      "speech-bubble intro-text"
+      "intro-img intro-text";
+  }
+  /* Stats */
+  .stats .grid {
+    grid-template-columns: 1fr 5fr;
+    grid-template-rows: repeat(3, 1fr);
+    row-gap: 20px;
+    grid-template-areas:
+      "icon-1 icon-text-1"
+      "icon-2 icon-text-2"
+      "icon-3 icon-text-3";
+  }
+  .icon-text-1 {
+    grid-area: icon-text-1;
+  }
+  .icon-text-2 {
+    grid-area: icon-text-2;
+  }
+  .icon-text-3 {
+    grid-area: icon-text-3;
+  }
+  /* Showcase */
+  .showcase .grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+  .showcase-img {
+    justify-self: center;
+  }
 }
-
 /* ======================Mobiles====================== */
 @media (max-width: 500px) {
   .logo {
     font-size: 16px;
+  }
+  .grid,
+  .intro .grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas:
+      "speech-bubble"
+      "intro-img"
+      "intro-text";
   }
 }
