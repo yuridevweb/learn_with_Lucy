@@ -41,6 +41,11 @@ img {
   width: 100%;
 }
 
+input {
+  width: 100%;
+  padding: 6px 10px;
+}
+
 /*=============== Navbar================= */
 .logo {
   font-size: 24px;
@@ -176,6 +181,7 @@ img {
 /* ===========Showcase========== */
 .showcase {
   background-color: var(--primary-color);
+  padding: 10px;
 }
 .showcase .grid {
   grid-template-columns: 2fr 3fr;
@@ -185,6 +191,9 @@ img {
 }
 
 /* ===============Showcase-benefits============ */
+.showcase-benefits .container {
+  margin-bottom: 80px;
+}
 .showcase-benefits .grid {
   grid-template-columns: 1fr 7fr;
 }
@@ -193,9 +202,63 @@ img {
 .footer {
   background-color: var(--primary-color);
   color: var(--light-color);
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
 }
+
 .footer .flex {
   justify-content: space-around;
+}
+
+/* =====================Profile=============== */
+
+.profile-img {
+  max-width: 200px;
+  max-height: 350px;
+  grid-area: profile-img;
+}
+
+.pet-img {
+  max-width: 200px;
+  max-height: 350px;
+  grid-area: pet-img;
+}
+
+.dwelling-img {
+  max-width: 200px;
+  max-height: 350px;
+  grid-area: dwelling-img;
+}
+
+.profile-info {
+  grid-area: profile-info;
+}
+
+.profile .grid {
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  align-items: flex-start;
+  grid-template-areas:
+    "profile-img pet-img profile-info"
+    "profile-img dwelling-img profile-info";
+}
+
+.profile-form {
+  display: none;
+}
+
+.profile-form.show {
+  display: block;
+}
+
+.profile-form-toggle {
+  background: none;
+  border: 0px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
 }
 
 /* =================Utilities================= */
@@ -227,10 +290,19 @@ img {
   color: var(--light-color);
   border: none;
   border-radius: 5px;
+  margin: 5px 0px;
 }
 
 .btn:hover {
   transform: scale(0.98);
+}
+
+.default {
+  background: var(--light-color);
+  color: var(--dark-color);
+  border-style: solid;
+  border-width: thin;
+  margin-left: 10px;
 }
 
 .card {
@@ -240,6 +312,18 @@ img {
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
   padding: 20px;
   margin: 10px;
+}
+
+/* ===============Forms============================= */
+.form-info {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 10px;
+}
+
+.form-header {
+  font-size: 24px;
+  font-weight: 700;
 }
 
 /* ==================Tablets and under=============== */

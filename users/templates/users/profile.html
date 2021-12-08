@@ -1,0 +1,56 @@
+{% extends 'main/base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+<section class="profile">
+  <h1>Profile info</h1>
+
+  <div class="container grid">
+
+    <div class="profile-img" >
+      <img src=" {{ user.profile.image.url }}">
+    </div>
+
+    <div class="pet-img">
+      <h4>Pet</h4>
+      <img class="profile-img"  src=" {{user.profile.profile_pet.image.url}}">
+    </div>
+
+    <div class="dwelling-img">
+      <h4>Dwelling</h4>
+    </div>
+
+    <div class="profile-info">
+
+      <h4>Username: {{user.username}}</h4>
+      <h4>Age: {{user.profile.age}}</h4>
+      <h4>Email: {{user.email}}</h4>
+
+      <button class="profile-form-toggle" id="profile-form-toggle">
+        <p>Update profile info <i class="fas fa-pencil-alt  "></i> </p>
+      </button>
+        <form class="profile-form" id="profile-form" method="POST" enctype="multipart/form-data">
+          {% csrf_token %}
+          <fieldset class="form-group">
+            <legend class="border-bottom mb-4">Profile Info</legend>
+            {{ p_form|crispy }}
+          </fieldset>
+          <br>
+          <div class="form-group">
+            <button class="btn btn-outline-info" type="submit">Update</button>
+          </div>
+        </form>
+    </div>
+
+
+      
+
+
+  
+
+  </div>    
+
+</section>
+
+{% endblock %}
+
+

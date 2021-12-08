@@ -21,100 +21,22 @@
           <i class="fa fa-bars"></i>
         </button>
         <ul class="nav-ul" id="nav-ul">
-          <li><a class="navbar-links" href="#">Home</a></li>
-          <li><a class="navbar-links" href="#">Features</a></li>
-          <li><a class="navbar-links" href="#">Docs</a></li>
+          <li><a class="navbar-links" href="{% url 'home'%}">Home</a></li>
+          <li><a class="navbar-links" href="{% url 'register'%}">Register</a></li>
+          <li><a class="navbar-links" href="{% url 'login'%}">Log In</a></li>
+          <li><a class="navbar-links" href="{% url 'profile'%}">Profile</a></li>
+          <li><a class="navbar-links" href="{% url 'logout'%}">Log Out</a></li>
         </ul>
     </nav>
   </div>
 
-  <!-- Intro -->
-  <section class="intro">
-    <div class="container grid">
-      <div class="speech-bubble">
-        <h4>Hi, my name is Lucy!</h4>
-      </div>
-      <div class="intro-img">
-        <img src="{% static 'main/goat.svg' %}" alt="goat">
-      </div>
-      <div class="intro-text card">
-        <h1>Skills to practise to meet your learning objectives!</h1>
-        <p>Learning at home is different to learning in school.
-          So "Learn with Lucy" is designed around home use, to make it effective, fun
-          and rewarding for children and parents alike.</p>
-        <a href="#" class="btn">Join now!</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Stats -->
-  <section class="stats flex">
-    <div class="container flex">
-      <h1 class="stats-heading">Educational games and activities</h3>
-      <div class="stats-img">
-        <img src="{% static 'main/children.svg' %}" alt="children">
-      </div>
-        <div class="grid grid">
-          <div class="icon-1">
-            <i class="fas fa-gamepad fa-4x icons"></i>
-          </div>
-          <div class="icon-2">
-            <i class="fas fa-mobile-alt fa-4x icons"></i>
-          </div>
-          <div class="icon-3">
-            <i class="fas fa-chart-bar fa-4x icons"></i>
-          </div>
-          <div class="icon-text-1">
-            <h3>Rewarding for all with motivation built-in.</h3>
-          </div>
-          <div class="icon-text-2">
-            <h3>Learn at any time, in your own home, at your child's pace.</h3>
-          </div>
-          <div class="icon-text-3">
-            <h3>Score table with best results.</h3>
-          </div>
-        </div>
-    </div>
-  </section>
-
-  <!-- Showcase -->
-  <section class="showcase">
-    <div class="container grid">
-      <div class="showcase-img">
-        <img src="{% static 'main/goat.svg' %}" alt="goat">
-      </div>
-      <div class="showcase-text card">
-        <h1>Children learn better with laughter and through play!</h1>
-        <p>Learn With Lucy aims to help your child learn by developing
-          curiosity, increasing concentration and boosting confidence.</p>
-        <a href="#" class="btn">Sign Up</a>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- Showcase-benefits -->
-  <section class="showcase-benefits">
-    <div class="container">
-      <div class="grid card">
-        <i class="far fa-check-circle fa-3x icons"></i>
-        <h3>Unlimited access to maths and English practice.</h3>
-      </div>
-      <div class="grid card">
-        <i class="far fa-check-circle fa-3x icons"></i>
-        <h3>Dynamic and interactive questions that adjust to your child's level.</h3>
-      </div>
-      <div class="grid card">
-        <i class="far fa-check-circle fa-3x icons"></i>
-        <h3>Powerful tools that promote learning.</h3>
-      </div>
-    </div>
-  </section>
-
+  {% block content %}
+  
+  {% endblock content %}
 <!-- Footer -->
   <footer class="footer">
     <div class="container flex">
-      <p>Learn With Luzy</p>
+      <p>Learn With Lucy</p>
       <p>Copyright &copy; 2021</p>
     </div>
   </footer>
