@@ -2,37 +2,75 @@
 {% load crispy_forms_tags %}
 {% block content %}
 <section class="profile">
-  <h1>Profile info</h1>
+  <h1 class="flex">Profile info</h1>
 
-  <div class="container grid">
+  <div class="container grid card">
 
-    <div class="profile-img" >
-      <img src=" {{ user.profile.image.url }}">
+    <div class="profile-img card  flex" >
+      <img class="main-img" src=" {{ user.profile.image.url }}">
+      <a class="upd-profile" href="{% url 'login'%}"><i class="fas fa-images"></i></a>
     </div>
 
-    <div class="pet-img">
-      <h4>Pet</h4>
-      <img class="profile-img"  src=" {{user.profile.profile_pet.image.url}}">
+    <div class="pet-img  card  flex">
+      <!-- <h4>Pet</h4> -->
+      <img class="secondary-img flex"  src=" {{user.profile.profile_pet.image.url}}">
+      <a class="upd-profile" href="{% url 'login'%}"><i class="fas fa-images"></i></a>
     </div>
 
-    <div class="dwelling-img">
-      <h4>Dwelling</h4>
+    <div class="dwelling-img  card  flex">
+      <!-- <h4>Dwelling</h4> -->
+      <img class="secondary-img" src=" {{user.profile.profile_dwelling.image.url}}">
+      <a class="upd-profile" href="{% url 'login'%}"><i class="fas fa-images"></i></a>
     </div>
 
     <div class="profile-info">
-
-      <h4>Username: {{user.username}}</h4>
-      <h4>Age: {{user.profile.age}}</h4>
-      <h4>Email: {{user.email}}</h4>
-
+      <table>
+        <tr class="underline">
+          <td class="tables"><h4>Username: </h4></td>
+          <td class="tables"><h4>{{user.username}}</h4></td>
+        </tr>
+        <tr class="underline">
+          <td class="tables">
+            <h4>Respect:</h4>
+          </td>
+          <td class="tables">
+            <h4>{{user.username}}</h4>
+          </td>
+        </tr>
+        <tr class="underline">
+          <td class="tables">
+            <h4>Coins:</h4>
+          </td>
+          <td class="tables">
+            <h4>{{user.profile.coins}}</h4>
+          </td>
+        </tr>
+        <tr class="underline">
+          <td class="tables">
+            <h4>Email: </h4>
+          </td>
+          <td class="tables">
+            <h4>{{user.email}}</h4>
+          </td>
+        </tr>
+        <tr class="underline">
+          <td class="tables">
+            <h4>Date of registration: </h4>
+          </td>
+          <td class="tables">
+            <h4>{{user.profile.created_at|date:'Y-m-d'}}</h4>
+          </td>
+        </tr>
+      </table>
+      
       <button class="profile-form-toggle" id="profile-form-toggle">
-        <p>Update profile info <i class="fas fa-pencil-alt  "></i> </p>
+        <p class="upd-profile">Update profile info <i class="fas fa-pencil-alt  "></i> </p>
       </button>
         <form class="profile-form" id="profile-form" method="POST" enctype="multipart/form-data">
           {% csrf_token %}
           <fieldset class="form-group">
             <legend class="border-bottom mb-4">Profile Info</legend>
-            {{ p_form|crispy }}
+            {{ form|crispy }}
           </fieldset>
           <br>
           <div class="form-group">

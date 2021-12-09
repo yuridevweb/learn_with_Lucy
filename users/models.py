@@ -9,12 +9,11 @@ class Profile(models.Model):
     age = models.IntegerField(default=0)
     coins = models.IntegerField(default=0)
     image = models.FileField(default='default.svg')
+    created_at = models.DateTimeField(auto_now_add=True, null=True)
     profile_pet = models.ForeignKey(
         Pet, on_delete=models.CASCADE, null=True)
     profile_dwelling = models.ForeignKey(
         Dwelling, on_delete=models.CASCADE, null=True)
-
-    # joined date
 
     def __str__(self):
         return f'{self.user.username} Profile'

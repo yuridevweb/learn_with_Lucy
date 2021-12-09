@@ -29,7 +29,15 @@
         </ul>
     </nav>
   </div>
-
+  <div class="container flex">
+    {%if messages %}
+    {% for message in messages %}
+    <div class="message">
+      {{ message }}
+    </div>
+    {% endfor %}
+    {% endif %}
+  </div>
   {% block content %}
   
   {% endblock content %}

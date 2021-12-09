@@ -213,22 +213,27 @@ input {
 }
 
 /* =====================Profile=============== */
-
+.profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 .profile-img {
-  max-width: 200px;
-  max-height: 350px;
   grid-area: profile-img;
 }
-
+.secondary-img {
+  max-width: 165px;
+  max-height: 165px;
+}
+.main-img {
+  max-width: 300px;
+  max-height: 405px;
+}
 .pet-img {
-  max-width: 200px;
-  max-height: 350px;
   grid-area: pet-img;
 }
 
 .dwelling-img {
-  max-width: 200px;
-  max-height: 350px;
   grid-area: dwelling-img;
 }
 
@@ -237,7 +242,7 @@ input {
 }
 
 .profile .grid {
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: 3fr 2fr 4fr;
   grid-template-rows: repeat(2, 1fr);
   align-items: flex-start;
   grid-template-areas:
@@ -259,6 +264,28 @@ input {
   font-size: 16px;
   font-weight: 500;
   cursor: pointer;
+}
+
+.upd-profile {
+  align-self: flex-end;
+}
+.tables {
+  width: 200px;
+}
+
+.underline {
+  position: relative;
+  border-style: solid;
+  border-width: 1px 1px 0 1px;
+  min-height: 100px;
+}
+.underline::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-bottom: 1px solid;
 }
 
 /* =================Utilities================= */
@@ -312,6 +339,10 @@ input {
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
   padding: 20px;
   margin: 10px;
+}
+
+.message {
+  background-color: greenyellow;
 }
 
 /* ===============Forms============================= */
@@ -382,7 +413,26 @@ input {
   .showcase-img {
     justify-self: center;
   }
+
+  /* profile */
+  .profile .grid {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    align-items: flex-start;
+    margin-bottom: 40px;
+    grid-template-areas:
+      "profile-img pet-img"
+      "profile-img dwelling-img"
+      "profile-info profile-info";
+  }
+
+  .profile-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 }
+
 /* ======================Mobiles====================== */
 @media (max-width: 500px) {
   .logo {
@@ -396,5 +446,18 @@ input {
       "speech-bubble"
       "intro-img"
       "intro-text";
+  }
+
+  .profile .grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: 2fr 1fr 1fr 2fr;
+    align-items: center;
+    justify-content: center;
+    row-gap: 0px;
+    grid-template-areas:
+      "profile-img"
+      "pet-img"
+      "dwelling-img"
+      "profile-info";
   }
 }
