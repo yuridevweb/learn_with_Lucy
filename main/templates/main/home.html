@@ -3,13 +3,14 @@
 
   {% block content %}
   <!-- Intro -->
+  <main>
   <section class="intro">
     <div class="container grid">
       <div class="speech-bubble">
         <h4>Hi, my name is Lucy!</h4>
       </div>
       <div class="intro-img">
-        <img src="{% static 'main/goat.svg' %}" alt="goat">
+        <img src="{% static 'main/goat.svg' %}" alt="funny looking goat">
       </div>
       <div class="intro-text card">
         <h1>Skills to practise to meet your learning objectives!</h1>
@@ -24,9 +25,9 @@
   <!-- Stats -->
   <section class="stats flex">
     <div class="container flex">
-      <h1 class="stats-heading">Educational games and activities</h3>
+      <h2 class="stats-heading">Educational games and activities</h2>
         <div class="stats-img">
-          <img src="{% static 'main/children.svg' %}" alt="children">
+          <img src="{% static 'main/children.svg' %}" alt="happy children going to school">
         </div>
         <div class="grid grid">
           <div class="icon-1">
@@ -39,13 +40,13 @@
             <i class="fas fa-chart-bar fa-4x icons"></i>
           </div>
           <div class="icon-text-1">
-            <h3>Rewarding for all with motivation built-in.</h3>
+            <p class="lead">Rewarding for all with motivation built-in.</p>
           </div>
           <div class="icon-text-2">
-            <h3>Learn at any time, in your own home, at your child's pace.</h3>
+            <p class="lead">Learn at any time, in your own home, at your child's pace.</p>
           </div>
           <div class="icon-text-3">
-            <h3>Score table with best results.</h3>
+            <p class="lead">Score table with best results.</p>
           </div>
         </div>
     </div>
@@ -55,7 +56,7 @@
   <section class="showcase">
     <div class="container grid">
       <div class="showcase-img">
-        <img src="{% static 'main/goat.svg' %}" alt="goat">
+        <img src="{% static 'main/goat.svg' %}" alt="funny looking goat">
       </div>
       <div class="showcase-text card">
         <h1>Children learn better with laughter and through play!</h1>
@@ -72,16 +73,17 @@
     <div class="container">
       <div class="grid card">
         <i class="far fa-check-circle fa-3x icons"></i>
-        <h3>Unlimited access to maths and English practice.</h3>
+        <p class="lead">Unlimited access to maths and English practice.</p>
       </div>
       <div class="grid card">
         <i class="far fa-check-circle fa-3x icons"></i>
-        <h3>Dynamic and interactive questions that adjust to your child's level.</h3>
+        <p class="lead">Dynamic and interactive questions that adjust to your child's level.</p>
       </div>
       <div class="grid card">
         <i class="far fa-check-circle fa-3x icons"></i>
-        <h3>Powerful tools that promote learning.</h3>
+        <p class="lead">Powerful tools that promote learning.</p>
       </div>
     </div>
   </section>
+  </main>
   {% endblock content %}

@@ -2,7 +2,7 @@
 
 :root {
   --primary-color: #990099;
-  --light-color: #fff;
+  --light-color: rgb(252, 252, 252);
   --dark-color: rgb(15, 15, 15);
 }
 
@@ -46,6 +46,11 @@ input {
   padding: 6px 10px;
 }
 
+caption {
+  padding: 20px;
+  font-weight: 600;
+}
+
 /*=============== Navbar================= */
 .logo {
   font-size: 24px;
@@ -69,8 +74,7 @@ input {
 }
 
 .navbar-links:hover {
-  border-bottom: 2px var(--light-color) solid;
-  max-width: 100px;
+  transform: scale(1.1);
 }
 
 .navbar .flex {
@@ -200,12 +204,15 @@ input {
 
 /* ===============Footer============ */
 .footer {
+  display: flex;
   background-color: var(--primary-color);
   color: var(--light-color);
   position: fixed;
+  /* position: relative; */
   left: 0;
   bottom: 0;
   width: 100%;
+  height: 50px;
 }
 
 .footer .flex {
@@ -217,6 +224,7 @@ input {
   display: flex;
   flex-direction: column;
   align-items: center;
+  height: calc(100vh - 105px);
 }
 .profile-img {
   grid-area: profile-img;
@@ -287,6 +295,39 @@ input {
   bottom: 0;
   border-bottom: 1px solid;
 }
+/* =================Addition================= */
+/* .addition {
+  height: calc(100vh - 105px);
+}
+ */
+.game-stats {
+  display: flex;
+  justify-content: space-around;
+  padding-bottom: 40px;
+}
+
+.addition {
+  display: flex;
+  justify-content: center;
+}
+
+/* =================High score================= */
+.table {
+  table-layout: fixed;
+  width: 100%;
+  border-collapse: collapse;
+  border: 3px solid purple;
+  text-align: center;
+}
+
+.tr-head {
+  padding: 20px;
+  background-color: rgb(50, 255, 111);
+}
+
+.tr-data:nth-child(2n) {
+  background-color: blanchedalmond;
+}
 
 /* =================Utilities================= */
 .container {
@@ -299,6 +340,10 @@ input {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.column {
+  flex-direction: column;
 }
 
 .grid {
@@ -343,6 +388,18 @@ input {
 
 .message {
   background-color: greenyellow;
+}
+
+.lead {
+  font-size: 20px;
+}
+
+.is-correct {
+  background-color: #23fc64;
+}
+
+.is-incorrect {
+  background-color: #fae465;
 }
 
 /* ===============Forms============================= */
@@ -459,5 +516,14 @@ input {
       "pet-img"
       "dwelling-img"
       "profile-info";
+  }
+
+  .game-stats {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .highscores .container {
+    padding: 5px;
   }
 }

@@ -1,6 +1,8 @@
 {% extends 'main/base.html' %}
 {% load crispy_forms_tags %}
+{% load static %}
 {% block content %}
+
 <section class="profile">
   <h1 class="flex">Profile info</h1>
 
@@ -78,17 +80,14 @@
           </div>
         </form>
     </div>
-
-
-      
-
-
-  
-
   </div>    
 
 </section>
 
-{% endblock %}
+{% endblock content %}
+
+{% block script %}
+<script src="{% static 'main/profile.js' %}"></script>
+{% endblock script %}
 
 

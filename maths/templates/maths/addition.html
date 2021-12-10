@@ -1,0 +1,59 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% block content %}
+<section class="container card">
+  <div class="game-stats">
+    <h3>Counter:<span id="counter">12</span>/5</h3>
+    <h3 id="timer">00:00:00</h3>
+    <h3>Score:<span id="score">12</span></h3>
+  </div>
+  <div class="flex column">
+    <p class="card" id="addition"></p>
+    <p class="is-correct" id="isCorrect"></p>
+    <p class="is-incorrect" id="isIncorrect"></p>
+    <p id="correctAnswer"></p>
+  </div>
+  <form method='post'>
+    {% csrf_token %}
+  </form>
+
+    <div style="display: flex; justify-content: center;">
+
+      <form action="" method="" name="vform">
+        <input id=input type="text" value="" name="input" /><br />
+        <div class="mt-2" style="display: flex; justify-content: center;">
+          <input type="button" class="fbutton" name="1" value="1" id="1" onClick=addNumber(this); />
+          <input type="button" class="fbutton" name="2" value="2" id="2" onClick=addNumber(this); />
+          <input type="button" class="fbutton" name="3" value="3" id="3" onClick=addNumber(this); />
+        </div>
+        <div style="display: flex; justify-content: center;">
+          <input type="button" class="fbutton" name="4" value="4" id="4" onClick=addNumber(this); />
+          <input type="button" class="fbutton" name="5" value="5" id="5" onClick=addNumber(this); />
+          <input type="button" class="fbutton" name="6" value="6" id="6" onClick=addNumber(this); />
+        </div>
+        <div style="display: flex; justify-content: center;">
+          <input type="button" class="fbutton" name="7" value="7" id="7" onClick=addNumber(this); />
+          <input type="button" class="fbutton" name="8" value="8" id="8" onClick=addNumber(this); />
+          <input type="button" class="fbutton" name="9" value="9" id="9" onClick=addNumber(this); />
+        </div>
+        <div style="display: flex; justify-content: center;">
+          <input type="button" class="fbutton" name="0" value="0" id="0" onClick=addNumber(this); />
+          <input type="button" class="fbutton" name="X" value="X" id="X" onClick=cleanInput(); />
+
+        </div>
+        <div style="display: flex; justify-content: center;">
+          <input class="mt-2 btn btn-primary" type="submit" value="Submit" id="submit">
+        </div>
+
+      </form>
+    </div>
+    </div>
+
+  </div>
+
+</section>
+{% endblock content %}
+
+{% block script %}
+<script src="{% static 'main/addition.js' %}"></script>
+{% endblock script %}

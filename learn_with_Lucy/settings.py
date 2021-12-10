@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'main.apps.MainConfig',
     'crispy_forms',
     'users.apps.UsersConfig',
+    'maths.apps.MathsConfig',
 ]
 
 MIDDLEWARE = [
