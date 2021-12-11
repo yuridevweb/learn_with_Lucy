@@ -1,0 +1,75 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block content %}
+
+<section class="highscores">
+<div class="container cover">
+
+  <div class="card">
+
+      <h1 class="flex">High Scores</h1>
+      <div class="tab-box">
+        <div class="box-tabs">
+          <div class="single-tab">Addition</div>
+          <div class="single-tab">Advanced addition</div>
+          <!-- <div class="single-tab">Top - 20 Simple addition results</div> -->
+        </div>
+
+        <div id="box-text">
+          <table class="table">
+            <caption>Top - 20 Addition results</caption>
+            <thead>
+              <tr class="tr-head">
+                <th scope="col">Rank</th>
+                <th scope="col">Name</th>
+                <th scope="col">Score</th>
+                <th scope="col">Time</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for h in highScore %}
+              <tr class="tr-data">
+                <td>{{ forloop.counter }}</td>
+                <td>{{h.name}}</td>
+                <td>{{h.score}}</td>
+                <td>{{h.formated_time}}</td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+
+        <div id="box-text-2">
+        <table class="table">
+          <caption>Top - 20 Advanced addition results</caption>
+          <thead>
+            <tr class="tr-head">
+              <th scope="col">Rank</th>
+              <th scope="col">Name</th>
+              <th scope="col">Score</th>
+              <th scope="col">Time</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for h in advhighScore %}
+            <tr class="tr-data">
+              <td>{{ forloop.counter }}</td>
+              <td>{{h.name}}</td>
+              <td>{{h.score}}</td>
+              <td>{{h.formated_time}}</td>
+            </tr>
+            {% endfor %}
+          </tbody>        
+        </table>
+        </div>
+      </div>
+  </div>
+</div>
+
+</section>
+{% endblock content %}
+
+{% block script %}
+<script src="{% static 'main/highscore.js' %}"></script>
+{% endblock script %}

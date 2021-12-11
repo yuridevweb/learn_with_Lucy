@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import HighScoreModel
+from .models import MathHighScore
 
 
-admin.site.register(HighScoreModel)
+admin.site.register(MathHighScore)

@@ -91,6 +91,7 @@ caption {
   font-size: 20px;
   cursor: pointer;
 }
+
 /* ======================Intro================== */
 
 .intro {
@@ -296,19 +297,24 @@ caption {
   border-bottom: 1px solid;
 }
 /* =================Addition================= */
-/* .addition {
-  height: calc(100vh - 105px);
-}
- */
+
 .game-stats {
   display: flex;
   justify-content: space-around;
   padding-bottom: 40px;
 }
+/* =================Simple Addition================= */
+.dot {
+  height: 60px;
+  width: 60px;
+  background-color: rgb(199, 230, 25);
+  border-radius: 50%;
+  display: inline;
+  cursor: pointer;
+}
 
-.addition {
-  display: flex;
-  justify-content: center;
+.dot-container {
+  text-align: center;
 }
 
 /* =================High score================= */
@@ -327,6 +333,42 @@ caption {
 
 .tr-data:nth-child(2n) {
   background-color: blanchedalmond;
+}
+
+.tab-box {
+  display: inline-block;
+  margin: auto;
+  font-size: 0;
+  background-color: var(--light-color);
+  color: var(--dark-color);
+}
+.tab-box .box-tabs {
+  display: flex;
+  width: 100%;
+  text-align: left;
+  background-color: blanchedalmond;
+}
+.tab-box .box-tabs .single-tab {
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 300;
+  margin: 0;
+  padding: 0 5px;
+  height: 60px;
+  line-height: 60px;
+  width: 50%;
+  text-align: center;
+}
+
+.tab-box #box-text {
+  text-align: left;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 28px;
+}
+
+#box-text-2 {
+  display: none;
 }
 
 /* =================Utilities================= */

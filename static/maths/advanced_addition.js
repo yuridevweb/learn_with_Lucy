@@ -26,7 +26,8 @@ function ranNum() {
 function Addition() {
   this.num1 = ranNum()
   this.num2 = ranNum()
-  this.total = this.num1 + this.num2
+  this.num3 = ranNum()
+  this.total = this.num1 + this.num2 + this.num3
   this.counter = 0
   this.score = 0
 }
@@ -44,22 +45,23 @@ Addition.prototype.checkAnswer = function () {
     isIncorrect.innerHTML = answer + "&#x2717";
     correctAnswer.style.visibility = "visible"
     correctAnswer.innerHTML =
-      this.num1 + ' + ' + this.num2 + ' = ' + this.total;
+      this.num1 + ' + ' + this.num2 + ' + '  + this.num3 + ' = ' + this.total;
   }
 }
 
 //displays HTML data
 Addition.prototype.displayHTML = function () {
-  addition.innerHTML = this.num1 + ' + ' + this.num2 + ' = ';
+  addition.innerHTML = this.num1 + ' + ' + this.num2 + ' + ' +  this.num3 + ' = ';
   counter.innerHTML = this.counter;
   score.innerHTML = this.score;
 }
 
 //update numbers for a next round
 Addition.prototype.updateNums = function () {
-  this.num1 = Math.floor(Math.random() * 12) + 1
-  this.num2 = Math.floor(Math.random() * 12) + 1
-  this.total = this.num1 + this.num2
+  this.num1 = ranNum()
+  this.num2 = ranNum()
+  this.num2 = ranNum()
+  this.total = this.num1 + this.num2 + this.num3
 }
 
 

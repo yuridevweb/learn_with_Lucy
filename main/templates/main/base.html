@@ -23,8 +23,8 @@
         </button>
         <ul class="nav-ul" id="nav-ul">
           <li><a class="navbar-links" href="{% url 'home'%}">Home</a></li>
-          <li><a class="navbar-links" href="{% url 'addition'%}">Additon</a></li>
-          <li><a class="navbar-links" href="{% url 'high_score'%}">High_Scores</a></li>
+          <li><a class="navbar-links" href="{% url 'high_score'%}">High Scores</a></li>
+          <li><a class="navbar-links" href="{% url 'maths'%}">Play Maths</a></li>
           {% if user.is_authenticated %}
           <li><a class="navbar-links" href="{% url 'profile'%}">Profile</a></li>
           <li><a class="navbar-links" href="{% url 'logout'%}">Log Out</a></li>
