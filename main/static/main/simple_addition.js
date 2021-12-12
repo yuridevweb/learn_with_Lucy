@@ -56,6 +56,7 @@ function hideResult() {
   correctAnswer.style.visibility = "hidden"
 }
 
+//Creating an array of random numbers and including correct answer
 function createChoices(total) {
   var nums = new Set();
   nums.add(total)
@@ -90,10 +91,8 @@ GameSettings.prototype.checkAnswer = function (answer) {
   }
 
   if ((Game.counter == maxQuestions) || (Game.counter > maxQuestions)) {
-    console.log("dsddasd")
     sent_ajax();
-    console.log("dsddasd")
-        return window.location.assign('highscores/');             
+        return window.location.assign('/maths/addition/highscores/');             
   }
     setTimeout(
       function () {
