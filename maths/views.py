@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from .models import MathHighScore, AdvMathScore
+from .models import MathHighScore, AdvMathScore, SimpleMathScore
 from django.http import JsonResponse
 # Create your views here.
 
@@ -23,9 +23,11 @@ def simple_addition(request):
 def high_score(request):
     highScore = MathHighScore.objects.all()
     advhighScore = AdvMathScore.objects.all()
+    simplehighScore = SimpleMathScore.objects.all()
     context = {
         'highScore': highScore[:20],
         'advhighScore': advhighScore[:20],
+        'simplehighScore': simplehighScore[:20],
     }
     return render(request, 'maths/high_score.html', context)
 
@@ -77,7 +79,6 @@ def get_advanced_add_score(request):
 
 
 def get_simple_add_score(request):
-    print("get_simple_add_score")
     # request should be ajax and method should be POST.
     if request.is_ajax and request.method == "POST":
         # obtain data
@@ -88,10 +89,10 @@ def get_simple_add_score(request):
         user_name = request.user
         # Creating or updating user's score
         try:
-            obj = AdvMathScore.objects.get(name=user_name)
+            obj = SimpleMathScore.objects.get(name=user_name)
             obj.check_high_score(new_score, elapsedTime)
-        except AdvMathScore.DoesNotExist:
-            obj = AdvMathScore(
+        except SimpleMathScore.DoesNotExist:
+            obj = SimpleMathScore(
                 name=user_name, score=new_score, time=elapsedTime)
         obj.format_time()
         return JsonResponse({"elapsedTime": "question"}, status=200)

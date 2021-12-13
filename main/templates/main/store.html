@@ -1,0 +1,103 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block content %}
+
+<section class="highscores">
+  <div class="container cover">
+
+    <div class="card">
+
+      <h1 class="flex">Store</h1>
+      <div class="tab-box">
+        <div class="box-tabs">
+          <div class="single-tab">Avatars</div>
+          <div class="single-tab">Advanced addition</div>
+          <div class="single-tab">Simple addition</div>
+        </div>
+        <div id="box-text">
+          <table class="table">
+            <caption>Top - 20 Addition results</caption>
+            <thead>
+              <tr class="tr-head">
+                <th scope="col">Rank</th>
+                <th scope="col">Name</th>
+                <th scope="col">Score</th>
+                <th scope="col">Time</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for avatar in avatars %}
+              <tr class="tr-data">
+                <td>{{ forloop.counter }}</td>
+                <td><img class="secondary-img flex" src="{{avatar.image.url}}"></td>
+                <td>{{avatar.price}}</td>
+                <td>{{avatar.reputation}}</td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+
+        <div id="box-text-2">
+          <table class="table">
+            <caption>Top - 20 Advanced addition results</caption>
+            <thead>
+              <tr class="tr-head">
+                <th scope="col">Rank</th>
+                <th scope="col">Name</th>
+                <th scope="col">Score</th>
+                <th scope="col">Time</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for avatar in avatars %}
+              <tr class="tr-data">
+                <td><form method="POST">
+                  {% csrf_token %}
+                    <input type="submit" name="avva" value="Buy">
+                </form></td>
+                <!-- <td>{{avatar.name}}</td> -->
+                <td><img class="secondary-img flex" src="{{avatar.image.url}}"></td>
+                <td>{{avatar.price}}</td>
+                <td>{{avatar.reputation}}</td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+
+        <div id="box-text-3">
+          <table class="table">
+            <caption>Top - 20 Simple addition results</caption>
+            <thead>
+              <tr class="tr-head">
+                <th scope="col">Rank</th>
+                <th scope="col">Name</th>
+                <th scope="col">Score</th>
+                <th scope="col">Time</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for h in simplehighScore %}
+              <tr class="tr-data">
+                <td>{{ forloop.counter }}</td>
+                <td>{{h.name}}</td>
+                <td>{{h.score}}</td>
+                <td>{{h.formated_time}}</td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
+{% endblock content %}
+
+{% block script %}
+<script src="{% static 'main/store.js' %}"></script>
+{% endblock script %}
+

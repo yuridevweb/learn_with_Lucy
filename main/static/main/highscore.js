@@ -5,13 +5,13 @@ $(window).on('load', function () {
 });
 
 const score1 = document.getElementById("box-text").innerHTML
-console.log(score1)
 const score2 = document.getElementById("box-text-2").innerHTML
+const score3 = document.getElementById("box-text-3").innerHTML
 
 var aboutUs = {
   "Addition": score1,
   "Advanced addition": score2,
-  "Values": "<ul><li>Nunc iaculis</li><li>Donec dictum fringilla</li><li>Duis convallis tortor ultrices</li><li>Curabitur in est lectus</li><li>Maecenas condimentum elit</li></ul>"
+  "Simple addition": score3,
 };
 
 var unseletectedColor = "#ffebcd";

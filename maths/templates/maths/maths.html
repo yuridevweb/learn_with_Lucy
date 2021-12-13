@@ -3,12 +3,14 @@
 
 {% block content %}
 
-  <section class="container flex">
-    <ul class="games-list card">
-      <li><a class="navbar-links" href="{% url 'advanced_addition'%}">Advanced addition</a></li>
-      <li><a class="navbar-links" href="{% url 'addition'%}">Addition</a></li>
-      <li><a class="navbar-links" href="{% url 'simple_addition'%}">Simple addition</a></li>
-    </ul>
+  <section class="activity-choice"> 
+    <div class="container flex">
+      <ul class="games-list card">
+        <li><a class="activity-links" href="{% url 'advanced_addition'%}">Advanced addition</a></li>
+        <li><a class="activity-links" href="{% url 'addition'%}">Addition</a></li>
+        <li><a class="activity-links" href="{% url 'simple_addition'%}">Simple addition</a></li>
+      </ul>
+    </div>
   </section>
 
 {% endblock content %}

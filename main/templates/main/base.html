@@ -22,9 +22,9 @@
           <i class="fa fa-bars"></i>
         </button>
         <ul class="nav-ul" id="nav-ul">
-          <li><a class="navbar-links" href="{% url 'home'%}">Home</a></li>
+          <li><a class="navbar-links" href="{% url 'store'%}">Store</a></li>
           <li><a class="navbar-links" href="{% url 'high_score'%}">High Scores</a></li>
-          <li><a class="navbar-links" href="{% url 'maths'%}">Play Maths</a></li>
+          <li><a class="navbar-links" href="{% url 'maths'%}">Maths</a></li>
           {% if user.is_authenticated %}
           <li><a class="navbar-links" href="{% url 'profile'%}">Profile</a></li>
           <li><a class="navbar-links" href="{% url 'logout'%}">Log Out</a></li>

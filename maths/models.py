@@ -50,6 +50,10 @@ class MathHighScore(models.Model):
         ordering = ('-score', 'time')
 
 
+class SimpleMathScore(MathHighScore):
+    pass
+
+
 class AdvMathScore(models.Model):
 
     id = models.AutoField(primary_key=True)

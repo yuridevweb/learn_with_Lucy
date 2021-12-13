@@ -53,13 +53,13 @@ caption {
 
 /*=============== Navbar================= */
 .logo {
-  font-size: 24px;
+  font-size: 18px;
 }
 
 .navbar {
   background-color: var(--primary-color);
   color: var(--light-color);
-  padding: 10px;
+  padding: 5px;
 }
 
 .nav-ul {
@@ -69,7 +69,7 @@ caption {
 .navbar a {
   color: var(--light-color);
   padding: 5px;
-  margin: 0 5px;
+  margin: 0 6px;
   display: block;
 }
 
@@ -296,12 +296,48 @@ caption {
   bottom: 0;
   border-bottom: 1px solid;
 }
+/* =================Store================= */
+.store {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.store .grid {
+  grid-template-columns: 3fr 2fr 4fr;
+  grid-template-rows: repeat(2, 1fr);
+  align-items: flex-start;
+  grid-template-areas:
+    "profile-img pet-img profile-info"
+    "profile-img dwelling-img profile-info";
+}
+
+/* =================Maths================= */
+
+.activity-choice .container {
+  height: 60vh;
+}
+
+.games-list {
+  width: 250px;
+}
+
+.activity-links {
+  font-size: 18px;
+}
+
+.activity-links:hover {
+  padding-left: 8px;
+  transition-duration: 0.2s;
+}
+
 /* =================Addition================= */
 
 .game-stats {
   display: flex;
   justify-content: space-around;
   padding-bottom: 40px;
+  align-items: center;
 }
 /* =================Simple Addition================= */
 .dot {
@@ -356,7 +392,7 @@ caption {
   padding: 0 5px;
   height: 60px;
   line-height: 60px;
-  width: 50%;
+  width: 33.33%;
   text-align: center;
 }
 
@@ -368,6 +404,10 @@ caption {
 }
 
 #box-text-2 {
+  display: none;
+}
+
+#box-text-3 {
   display: none;
 }
 
@@ -529,6 +569,20 @@ caption {
     display: flex;
     flex-direction: column;
     align-items: center;
+  }
+
+  /* Highscores */
+  .tab-box .box-tabs {
+    flex-direction: column;
+  }
+
+  .tab-box .box-tabs .single-tab {
+    width: 100%;
+  }
+
+  .highscores .card {
+    padding: 0;
+    margin: 0;
   }
 }
 
