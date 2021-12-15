@@ -10,19 +10,19 @@
 
     <div class="profile-img card  flex" >
       <img class="main-img" src=" {{ user.profile.image.url }}">
-      <a class="upd-profile" href="{% url 'login'%}"><i class="fas fa-images"></i></a>
+      <a class="upd-profile" href="{% url 'store'%}"><i class="fas fa-images"></i></a>
     </div>
 
     <div class="pet-img  card  flex">
       <!-- <h4>Pet</h4> -->
       <img class="secondary-img flex"  src=" {{user.profile.profile_pet.image.url}}">
-      <a class="upd-profile" href="{% url 'login'%}"><i class="fas fa-images"></i></a>
+      <a class="upd-profile" href="{% url 'store'%}"><i class="fas fa-images"></i></a>
     </div>
 
     <div class="dwelling-img  card  flex">
       <!-- <h4>Dwelling</h4> -->
       <img class="secondary-img" src=" {{user.profile.profile_dwelling.image.url}}">
-      <a class="upd-profile" href="{% url 'login'%}"><i class="fas fa-images"></i></a>
+      <a class="upd-profile" href="{% url 'store'%}"><i class="fas fa-images"></i></a>
     </div>
 
     <div class="profile-info">

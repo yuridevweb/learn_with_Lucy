@@ -1,3 +1,4 @@
+from django.shortcuts import redirect
 from django.db import models
 from django.contrib.auth.models import User
 from main.models import Pet, Dwelling

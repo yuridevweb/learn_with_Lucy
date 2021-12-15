@@ -7,7 +7,7 @@
   <div class="container cover">
 
     <div class="card">
-
+      <h4>Balance: {{user.profile.coins}} coins</h4>
       <h1 class="flex">Store</h1>
       <div class="tab-box">
         <div class="box-tabs">
@@ -22,8 +22,8 @@
               <tr class="tr-head">
                 <th scope="col">Rank</th>
                 <th scope="col">Name</th>
-                <th scope="col">Score</th>
-                <th scope="col">Time</th>
+                <th scope="col">Price</th>
+                <th scope="col">Reputation</th>
               </tr>
             </thead>
             <tbody>
@@ -46,8 +46,8 @@
               <tr class="tr-head">
                 <th scope="col">Rank</th>
                 <th scope="col">Name</th>
-                <th scope="col">Score</th>
-                <th scope="col">Time</th>
+                <th scope="col">Price</th>
+                <th scope="col">Reputation</th>
               </tr>
             </thead>
             <tbody>
@@ -55,7 +55,7 @@
               <tr class="tr-data">
                 <td><form method="POST">
                   {% csrf_token %}
-                    <input type="submit" name="avva" value="Buy">
+                    <input type="submit" name="{{avatar.name}}" value="Buy">
                 </form></td>
                 <!-- <td>{{avatar.name}}</td> -->
                 <td><img class="secondary-img flex" src="{{avatar.image.url}}"></td>
@@ -74,8 +74,8 @@
               <tr class="tr-head">
                 <th scope="col">Rank</th>
                 <th scope="col">Name</th>
-                <th scope="col">Score</th>
-                <th scope="col">Time</th>
+                <th scope="col">Price</th>
+                <th scope="col">Reputation</th>
               </tr>
             </thead>
             <tbody>
