@@ -297,21 +297,27 @@ caption {
   border-bottom: 1px solid;
 }
 /* =================Store================= */
-.store {
+/* .store {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-}
+} */
 
-.store .grid {
-  grid-template-columns: 3fr 2fr 4fr;
+.store.grid {
+  grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(2, 1fr);
-  align-items: flex-start;
-  grid-template-areas:
-    "profile-img pet-img profile-info"
-    "profile-img dwelling-img profile-info";
 }
 
+.store-item.card {
+  background-color: #ebffcb;
+  width: 220px;
+  height: 280px;
+  padding: 100 100px;
+  justify-self: center;
+}
+
+.store .btn {
+  background-color: rgb(180, 243, 156);
+  color: var(--dark-color);
+}
 /* =================Maths================= */
 
 .activity-choice .container {
@@ -584,6 +590,12 @@ caption {
     padding: 0;
     margin: 0;
   }
+
+  /* Store */
+  .store.grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+  }
 }
 
 /* ======================Mobiles====================== */
@@ -618,8 +630,38 @@ caption {
     flex-direction: column;
     align-items: center;
   }
-
+  /* need to remove container here and rid of white strip */
   .highscores .container {
     padding: 5px;
   }
+  /* Store */
+  .store.grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    margin-bottom: 50px;
+    padding-bottom: 50px;
+  }
+
+  .store-item.card {
+    width: 150px;
+    height: 200px;
+    padding: 5px;
+    font-size: 10px;
+  }
+
+  .store-item .secondary-img {
+    max-width: 120px;
+    max-height: 120px;
+  }
 }
+/* .store-item.card {
+  background-color: #23fc64;
+  width: 220px;
+  height: 280px;
+  padding: 100 100px;
+  justify-self: center;
+} */
+/* .secondary-img {
+  max-width: 165px;
+  max-height: 165px;
+} */

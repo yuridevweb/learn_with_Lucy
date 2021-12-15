@@ -25,6 +25,7 @@ def store(request):
         #messages.warning(request, user_profile.pet_purschase(item))
         #print("xxxx", user_profile.pet_purschase(item))
         if user_profile.pet_purschase(item) == "Congratulations! You have a new pet!":
+            messages.warning(request, "Congratulations! You have a new pet!")
             return redirect('profile')
 
     user = request.user.profile.coins

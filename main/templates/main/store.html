@@ -3,94 +3,63 @@
 
 {% block content %}
 
-<section class="highscores">
+<section class="store flex">
   <div class="container cover">
+    <h4>Balance: {{user.profile.coins}} coins</h4>
 
-    <div class="card">
-      <h4>Balance: {{user.profile.coins}} coins</h4>
-      <h1 class="flex">Store</h1>
-      <div class="tab-box">
-        <div class="box-tabs">
-          <div class="single-tab">Avatars</div>
-          <div class="single-tab">Advanced addition</div>
-          <div class="single-tab">Simple addition</div>
-        </div>
-        <div id="box-text">
-          <table class="table">
-            <caption>Top - 20 Addition results</caption>
-            <thead>
-              <tr class="tr-head">
-                <th scope="col">Rank</th>
-                <th scope="col">Name</th>
-                <th scope="col">Price</th>
-                <th scope="col">Reputation</th>
-              </tr>
-            </thead>
-            <tbody>
-              {% for avatar in avatars %}
-              <tr class="tr-data">
-                <td>{{ forloop.counter }}</td>
-                <td><img class="secondary-img flex" src="{{avatar.image.url}}"></td>
-                <td>{{avatar.price}}</td>
-                <td>{{avatar.reputation}}</td>
-              </tr>
-              {% endfor %}
-            </tbody>
-          </table>
-        </div>
-
-        <div id="box-text-2">
-          <table class="table">
-            <caption>Top - 20 Advanced addition results</caption>
-            <thead>
-              <tr class="tr-head">
-                <th scope="col">Rank</th>
-                <th scope="col">Name</th>
-                <th scope="col">Price</th>
-                <th scope="col">Reputation</th>
-              </tr>
-            </thead>
-            <tbody>
-              {% for avatar in avatars %}
-              <tr class="tr-data">
-                <td><form method="POST">
-                  {% csrf_token %}
-                    <input type="submit" name="{{avatar.name}}" value="Buy">
-                </form></td>
-                <!-- <td>{{avatar.name}}</td> -->
-                <td><img class="secondary-img flex" src="{{avatar.image.url}}"></td>
-                <td>{{avatar.price}}</td>
-                <td>{{avatar.reputation}}</td>
-              </tr>
-              {% endfor %}
-            </tbody>
-          </table>
-        </div>
-
-        <div id="box-text-3">
-          <table class="table">
-            <caption>Top - 20 Simple addition results</caption>
-            <thead>
-              <tr class="tr-head">
-                <th scope="col">Rank</th>
-                <th scope="col">Name</th>
-                <th scope="col">Price</th>
-                <th scope="col">Reputation</th>
-              </tr>
-            </thead>
-            <tbody>
-              {% for h in simplehighScore %}
-              <tr class="tr-data">
-                <td>{{ forloop.counter }}</td>
-                <td>{{h.name}}</td>
-                <td>{{h.score}}</td>
-                <td>{{h.formated_time}}</td>
-              </tr>
-              {% endfor %}
-            </tbody>
-          </table>
-        </div>
+    <h1 class="flex">Store</h1>
+    <div class="tab-box">
+      <div class="box-tabs">
+        <div class="single-tab">Avatars</div>
+        <div class="single-tab">Pets</div>
+        <div class="single-tab">Simple addition</div>
       </div>
+
+      <div id="box-text" class="store grid">
+        {% for avatar in avatars %}
+        <div class="store-item card">
+          <img class="secondary-img flex" src="{{avatar.image.url}}" alt="avatar">
+          <div class="container">
+            <h4><b>Price: {{avatar.price}}</b></h4>
+          </div>
+          <form method="POST">
+            {% csrf_token %}
+            <input class="btn" type="submit" name="{{avatar.name}}" value="Buy">
+          </form>
+        </div>
+        {% endfor %}
+      </div>
+
+      <div id="box-text-2" class="store grid">
+        {% for avatar in avatars %}
+        <div class="store-item card">
+          <img class="secondary-img flex" src="{{avatar.image.url}}" alt="avatar">
+          <div class="container">
+            <h4><b>Price: {{avatar.price}}</b></h4>
+          </div>
+          <form method="POST">
+            {% csrf_token %}
+            <input class="btn" type="submit" name="{{avatar.name}}" value="Buy">
+          </form>
+        </div>
+        {% endfor %}
+      </div>
+
+      <div id="box-text-3" class="store grid">
+        {% for avatar in avatars %}
+        <div class="store-item card">
+          <img class="secondary-img flex" src="{{avatar.image.url}}" alt="avatar">
+          <div class="container">
+            <h4><b>Price: {{avatar.price}}</b></h4>
+          </div>
+          <form method="POST">
+            {% csrf_token %}
+            <input class="btn" type="submit" name="{{avatar.name}}" value="Buy">
+          </form>
+        </div>
+        {% endfor %}
+      </div>
+
     </div>
   </div>
 
@@ -100,4 +69,3 @@
 {% block script %}
 <script src="{% static 'main/store.js' %}"></script>
 {% endblock script %}
-

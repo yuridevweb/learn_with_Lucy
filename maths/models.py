@@ -62,6 +62,7 @@ class AdvMathScore(models.Model):
     formated_time = models.CharField(max_length=30, default='0')
     name = models.ForeignKey(
         User, on_delete=models.CASCADE, null=True)
+    check = models.IntegerField(default='0')
 
     def __str__(self):
         return self.name.username
