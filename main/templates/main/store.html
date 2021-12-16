@@ -31,15 +31,15 @@
       </div>
 
       <div id="box-text-2" class="store grid">
-        {% for avatar in avatars %}
+        {% for pet in pets %}
         <div class="store-item card">
-          <img class="secondary-img flex" src="{{avatar.image.url}}" alt="avatar">
+          <img class="secondary-img flex" src="{{pet.image.url}}" alt="pet">
           <div class="container">
-            <h4><b>Price: {{avatar.price}}</b></h4>
+            <h4><b>Price: {{pet.price}}</b></h4>
           </div>
           <form method="POST">
             {% csrf_token %}
-            <input class="btn" type="submit" name="{{avatar.name}}" value="Buy">
+            <input class="btn" type="submit" name="{{pet.name}}" value="Buy">
           </form>
         </div>
         {% endfor %}

@@ -9,8 +9,8 @@ const score2 = document.getElementById("box-text-2").innerHTML
 const score3 = document.getElementById("box-text-3").innerHTML
 
 var aboutUs = {
-  "Addition": score1,
-  "Advanced addition": score2,
+  "Avatars": score1,
+  "Pets": score2,
   "Simple addition": score3,
 };
 

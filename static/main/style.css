@@ -53,13 +53,13 @@ caption {
 
 /*=============== Navbar================= */
 .logo {
-  font-size: 24px;
+  font-size: 18px;
 }
 
 .navbar {
   background-color: var(--primary-color);
   color: var(--light-color);
-  padding: 10px;
+  padding: 5px;
 }
 
 .nav-ul {
@@ -69,7 +69,7 @@ caption {
 .navbar a {
   color: var(--light-color);
   padding: 5px;
-  margin: 0 5px;
+  margin: 0 6px;
   display: block;
 }
 
@@ -296,12 +296,67 @@ caption {
   bottom: 0;
   border-bottom: 1px solid;
 }
+/* =================Store================= */
+/* .store {
+  display: flex;
+} */
+
+.store.grid {
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+}
+
+.store-item.card {
+  background-color: #ebffcb;
+  width: 220px;
+  height: 280px;
+  padding: 100 100px;
+  justify-self: center;
+}
+
+.store .btn {
+  background-color: rgb(180, 243, 156);
+  color: var(--dark-color);
+}
+/* =================Maths================= */
+
+.activity-choice .container {
+  height: 60vh;
+}
+
+.games-list {
+  width: 250px;
+}
+
+.activity-links {
+  font-size: 18px;
+}
+
+.activity-links:hover {
+  padding-left: 8px;
+  transition-duration: 0.2s;
+}
+
 /* =================Addition================= */
 
 .game-stats {
   display: flex;
   justify-content: space-around;
   padding-bottom: 40px;
+  align-items: center;
+}
+/* =================Simple Addition================= */
+.dot {
+  height: 60px;
+  width: 60px;
+  background-color: rgb(199, 230, 25);
+  border-radius: 50%;
+  display: inline;
+  cursor: pointer;
+}
+
+.dot-container {
+  text-align: center;
 }
 
 /* =================High score================= */
@@ -322,9 +377,45 @@ caption {
   background-color: blanchedalmond;
 }
 
-/* .cover {
+.tab-box {
+  display: inline-block;
+  margin: auto;
+  font-size: 0;
+  background-color: var(--light-color);
+  color: var(--dark-color);
+}
+.tab-box .box-tabs {
+  display: flex;
+  width: 100%;
+  text-align: left;
+  background-color: blanchedalmond;
+}
+.tab-box .box-tabs .single-tab {
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 300;
+  margin: 0;
+  padding: 0 5px;
+  height: 60px;
+  line-height: 60px;
+  width: 33.33%;
+  text-align: center;
+}
+
+.tab-box #box-text {
+  text-align: left;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 28px;
+}
+
+#box-text-2 {
   display: none;
-} */
+}
+
+#box-text-3 {
+  display: none;
+}
 
 /* =================Utilities================= */
 .container {
@@ -485,6 +576,26 @@ caption {
     flex-direction: column;
     align-items: center;
   }
+
+  /* Highscores */
+  .tab-box .box-tabs {
+    flex-direction: column;
+  }
+
+  .tab-box .box-tabs .single-tab {
+    width: 100%;
+  }
+
+  .highscores .card {
+    padding: 0;
+    margin: 0;
+  }
+
+  /* Store */
+  .store.grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+  }
 }
 
 /* ======================Mobiles====================== */
@@ -519,8 +630,38 @@ caption {
     flex-direction: column;
     align-items: center;
   }
-
+  /* need to remove container here and rid of white strip */
   .highscores .container {
     padding: 5px;
   }
+  /* Store */
+  .store.grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    margin-bottom: 50px;
+    padding-bottom: 50px;
+  }
+
+  .store-item.card {
+    width: 150px;
+    height: 200px;
+    padding: 5px;
+    font-size: 10px;
+  }
+
+  .store-item .secondary-img {
+    max-width: 120px;
+    max-height: 120px;
+  }
 }
+/* .store-item.card {
+  background-color: #23fc64;
+  width: 220px;
+  height: 280px;
+  padding: 100 100px;
+  justify-self: center;
+} */
+/* .secondary-img {
+  max-width: 165px;
+  max-height: 165px;
+} */
