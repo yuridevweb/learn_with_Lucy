@@ -19,6 +19,12 @@ class Profile(models.Model):
     def __str__(self):
         return f'{self.user.username} Profile'
 
+    def coins_earned(self, score):
+        earned_coins = score / 5
+        self.coins += earned_coins
+        self.save()
+        return "Thanks for playing! You earned %s coins!" % int(earned_coins)
+
     def purschase(self, item):
         if self.coins < item.price:
             return "Sorry, not  enough coins!"
@@ -28,5 +34,7 @@ class Profile(models.Model):
                 self.profile_avatar = item
             elif item.name.startswith('pet'):
                 self.profile_pet = item
+            else:
+                self.profile_dwelling = item
         self.save()
         return "Congratulations! Your profile has been updated!"

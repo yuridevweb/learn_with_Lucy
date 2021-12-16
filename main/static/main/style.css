@@ -236,7 +236,7 @@ caption {
 }
 .main-img {
   max-width: 300px;
-  max-height: 405px;
+  height: 390px;
 }
 .pet-img {
   grid-area: pet-img;

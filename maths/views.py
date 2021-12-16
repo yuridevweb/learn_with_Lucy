@@ -1,6 +1,8 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render
 from .models import MathHighScore, AdvMathScore, SimpleMathScore
 from django.http import JsonResponse
+from users.models import Profile
+from django.contrib import messages
 # Create your views here.
 
 
@@ -41,6 +43,9 @@ def get_addition_score(request):
         elapsedTime = int(data[0][1])
         new_score = int(data[1][1])
         """ Updating the HighScore  """
+
+        messages.warning(
+            request, request.user.profile.coins_earned(new_score))
         user_name = request.user
         # Creating or updating user's score
         try:
@@ -64,6 +69,8 @@ def get_advanced_add_score(request):
         elapsedTime = int(data[0][1])
         new_score = int(data[1][1])
         """ Updating the HighScore  """
+        messages.warning(
+            request, request.user.profile.coins_earned(new_score))
         user_name = request.user
         # Creating or updating user's score
         try:
@@ -85,6 +92,8 @@ def get_simple_add_score(request):
         data = list(request.POST.items())
         elapsedTime = int(data[0][1])
         new_score = int(data[1][1])
+        messages.warning(
+            request, request.user.profile.coins_earned(new_score))
         """ Updating the HighScore  """
         user_name = request.user
         # Creating or updating user's score

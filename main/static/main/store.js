@@ -4,14 +4,14 @@ $(window).on('load', function () {
   aboutUsTabs[0].style["background-color"] = seletectedColor;
 });
 
-const score1 = document.getElementById("box-text").innerHTML
-const score2 = document.getElementById("box-text-2").innerHTML
-const score3 = document.getElementById("box-text-3").innerHTML
+const avatars = document.getElementById("box-text").innerHTML
+const pets = document.getElementById("box-text-2").innerHTML
+const dwellings = document.getElementById("box-text-3").innerHTML
 
 var aboutUs = {
-  "Avatars": score1,
-  "Pets": score2,
-  "Simple addition": score3,
+  "Avatars": avatars,
+  "Pets": pets,
+  "Dwellings": dwellings,
 };
 
 var unseletectedColor = "#ffebcd";

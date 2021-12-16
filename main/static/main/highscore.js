@@ -1,8 +1,12 @@
-//Wait until scores are updated
-$(window).on('load', function () {
-  $("#cover").hide();
+//Wait until scores are updated 
+
+window.onload = function() {
+    if(!window.location.hash) {
+        window.location = window.location + '#loaded';
+        window.location.reload();
+  }
   aboutUsTabs[0].style["background-color"] = seletectedColor;
-});
+}
 
 const score1 = document.getElementById("box-text").innerHTML
 const score2 = document.getElementById("box-text-2").innerHTML

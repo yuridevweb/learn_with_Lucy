@@ -12,7 +12,7 @@
       <div class="box-tabs">
         <div class="single-tab">Avatars</div>
         <div class="single-tab">Pets</div>
-        <div class="single-tab">Simple addition</div>
+        <div class="single-tab">Dwellings</div>
       </div>
 
       <div id="box-text" class="store grid">
@@ -46,15 +46,15 @@
       </div>
 
       <div id="box-text-3" class="store grid">
-        {% for avatar in avatars %}
+        {% for dwelling in dwellings %}
         <div class="store-item card">
-          <img class="secondary-img flex" src="{{avatar.image.url}}" alt="avatar">
+          <img class="secondary-img flex" src="{{dwelling.image.url}}" alt="dwelling">
           <div class="container">
-            <h4><b>Price: {{avatar.price}}</b></h4>
+            <h4><b>Price: {{dwelling.price}}</b></h4>
           </div>
           <form method="POST">
             {% csrf_token %}
-            <input class="btn" type="submit" name="{{avatar.name}}" value="Buy">
+            <input class="btn" type="submit" name="{{dwelling.name}}" value="Buy">
           </form>
         </div>
         {% endfor %}

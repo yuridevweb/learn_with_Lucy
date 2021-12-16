@@ -29,6 +29,11 @@ class Avatar(models.Model):
     def __str__(self):
         return f'{self.name}'
 
-    def obtain_choice(self, choice):
+    @staticmethod
+    def obtain_choice(choice):
         if choice.startswith('ava'):
-            print(choice)
+            return Avatar.objects.get(name=choice)
+        elif choice.startswith('pet'):
+            return Pet.objects.get(name=choice)
+        else:
+            return Dwelling.objects.get(name=choice)
