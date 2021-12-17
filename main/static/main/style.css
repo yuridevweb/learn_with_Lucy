@@ -63,6 +63,19 @@ caption {
   overflow: hidden;
 }
 
+/* The sticky class is added to the navbar with JS when it reaches its scroll position */
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+}
+
+/* Add some top padding to the page content to prevent sudden quick movement (as the navigation bar gets a new position at the top of the page (position:fixed and top:0) */
+.sticky + .content {
+  padding-top: 60px;
+}
+
 .nav-ul {
   display: flex;
 }
@@ -104,6 +117,8 @@ caption {
   grid-template-areas:
     "speech-bubble intro-text"
     "intro-img intro-text";
+  z-index: -1;
+  padding-top: 50px;
 }
 
 .intro-img {
@@ -226,7 +241,6 @@ caption {
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: calc(100vh - 105px);
 }
 .profile-img {
   grid-area: profile-img;
@@ -237,7 +251,7 @@ caption {
 }
 .main-img {
   max-width: 300px;
-  height: 390px;
+  height: 400px;
 }
 .pet-img {
   grid-area: pet-img;
@@ -297,10 +311,14 @@ caption {
   bottom: 0;
   border-bottom: 1px solid;
 }
+
+.profile h1 {
+  padding-top: 50px;
+}
 /* =================Store================= */
-/* .store {
-  display: flex;
-} */
+.store {
+  padding-top: 50px;
+}
 
 .store.grid {
   grid-template-columns: repeat(3, 1fr);
@@ -423,7 +441,7 @@ caption {
 .container {
   max-width: 1100px;
   margin: 0 auto;
-  padding: 0 40px;
+  padding: 0px 40px;
 }
 
 .flex {
