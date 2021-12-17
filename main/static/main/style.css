@@ -60,6 +60,7 @@ caption {
   background-color: var(--primary-color);
   color: var(--light-color);
   padding: 5px;
+  overflow: hidden;
 }
 
 .nav-ul {
@@ -213,7 +214,7 @@ caption {
   left: 0;
   bottom: 0;
   width: 100%;
-  height: 50px;
+  height: 40px;
 }
 
 .footer .flex {
@@ -304,6 +305,7 @@ caption {
 .store.grid {
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(2, 1fr);
+  margin-bottom: 100px;
 }
 
 .store-item.card {
@@ -612,6 +614,9 @@ caption {
       "intro-img"
       "intro-text";
   }
+  .intro .intro-img {
+    justify-self: center;
+  }
 
   .profile .grid {
     grid-template-columns: 1fr;
@@ -630,9 +635,13 @@ caption {
     flex-direction: column;
     align-items: center;
   }
-  /* need to remove container here and rid of white strip */
-  .highscores .container {
-    padding: 5px;
+
+  h2.stats-heading {
+    text-align: center;
+  }
+
+  .container {
+    padding: 0px 1px;
   }
   /* Store */
   .store.grid {
@@ -653,15 +662,8 @@ caption {
     max-width: 120px;
     max-height: 120px;
   }
+  /* Highscores */
+  table.table {
+    font-size: 90%;
+  }
 }
-/* .store-item.card {
-  background-color: #23fc64;
-  width: 220px;
-  height: 280px;
-  padding: 100 100px;
-  justify-self: center;
-} */
-/* .secondary-img {
-  max-width: 165px;
-  max-height: 165px;
-} */
