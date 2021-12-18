@@ -22,3 +22,7 @@ function myFunction() {
     navbar.classList.remove("sticky");
   }
 }
+
+
+/* Footer */
+document.getElementById("copyright").innerHTML = new Date().getFullYear();

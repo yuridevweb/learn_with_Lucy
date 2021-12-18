@@ -26,9 +26,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = str(os.getenv('SECRET_KEY'))
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1']
+ALLOWED_HOSTS = ['167.172.61.6']
 
 
 # Application definition
@@ -83,17 +83,18 @@ WSGI_APPLICATION = 'learn_with_Lucy.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'learn_with',
-        'USER': 'postgres',
-        'PASSWORD': '0000',
-        'HOST': 'localhost',
-        # 'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        # 'NAME': 'myproj',
-        # 'USER': 'myprojectuser',
-        # 'PASSWORD': 'password1',
+        # 'ENGINE': 'django.db.backends.postgresql',
+        # 'NAME': 'learn_with',
+        # 'USER': 'postgres',
+        # 'PASSWORD': '0000',
         # 'HOST': 'localhost',
-        # 'PORT': '',
+
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'myproject',
+        'USER': 'myprojectuser',
+        'PASSWORD': 'password1',
+        'HOST': 'localhost',
+        'PORT': '',
     }
 }
 
