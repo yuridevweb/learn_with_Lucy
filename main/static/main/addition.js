@@ -37,12 +37,12 @@ Addition.prototype.checkAnswer = function () {
   answer = document.getElementById('input').value
   if (this.total == answer) {
     this.score += correctBonus
-    isCorrect.style.visibility = "visible"
+    isCorrect.style.display = "block"
     isCorrect.innerHTML =answer + "&#10004";
   } else {
-    isIncorrect.style.visibility = "visible"
+    isIncorrect.style.display = "block"
     isIncorrect.innerHTML = answer + "&#x2717";
-    correctAnswer.style.visibility = "visible"
+    correctAnswer.style.display = "block"
     correctAnswer.innerHTML =
       this.num1 + ' + ' + this.num2 + ' = ' + this.total;
   }
@@ -69,9 +69,9 @@ game.displayHTML();
 
 
 function hideResult() {
-  isCorrect.style.visibility = "hidden"
-  isIncorrect.style.visibility = "hidden"
-  correctAnswer.style.visibility = "hidden"
+  isCorrect.style.display = "none"
+  isIncorrect.style.display = "none"
+  correctAnswer.style.display = "none"
 }
 
 //game logic
