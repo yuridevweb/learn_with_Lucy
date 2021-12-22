@@ -4,11 +4,11 @@
 <div class="container">
   <form method="POST">
     {% csrf_token %}
-    <fieldset>
+    <fieldset style="margin-top: 50px;">
       <legend class="form-header">Join Today</legend>
       {{ form|crispy }}
     </fieldset>
-    <small class="form-info">
+    <small class="form-info" style="margin-bottom: 50px;">
       <button class="form-info btn" type="submit">Sign In</button>
     </small>
   </form>

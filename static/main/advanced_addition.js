@@ -5,7 +5,7 @@ const counter = document.getElementById("counter")
 const score = document.getElementById("score")
 const correctAnswer = document.getElementById("correctAnswer")
 const correctBonus = 10;
-const maxQuestions = 3;
+const maxQuestions = 5;
 
 //on screen input
 function addNumber(element){
