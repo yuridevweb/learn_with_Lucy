@@ -1,12 +1,9 @@
 # learn_with_Lucy
 Learning app for kids.
 
-This app wil include some simple math games with rewards for completing them.
+### Live Demo
+https://learn.yuridevweb.co.uk/
 
-To build Learn With Lucy app I'm planning to use:
-- Django
-- HTML, CSS
-- JavaScript with AJAX calls
-- Host it on Linode
-
-Good luck to me =D
+You can register or use existing account:
+username - github
+password - learn_with_Lucy
